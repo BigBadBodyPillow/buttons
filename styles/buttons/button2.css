@@ -1,0 +1,51 @@
+.button2 {
+  --border-radius: 8px;
+
+  color: white;
+  position: relative;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inter;
+  cursor: pointer;
+
+  background-image: linear-gradient(to right, #ff4d0c, #ffcb94, #ff4d0c);
+  background-size: 400%;
+
+  animation: button2-animation 5s infinite;
+  transition: opacity 0.1s;
+}
+
+.button2::before {
+  --border-width: 2px;
+
+  content: "button 2";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% -var(--border-width));
+  height: calc(100% -var(--border-width));
+  position: absolute;
+  inset: var(--border-width);
+
+  border-radius: calc(var(--border-radius) - var(--border-width));
+  background-color: #1a1a1a;
+}
+
+@keyframes button2-animation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+.button2:hover {
+  opacity: 0.8;
+}
+.button2:active {
+  opacity: 0.6;
+}

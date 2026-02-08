@@ -1,7 +1,24 @@
+:root {
+  --h1-colour: #dfdfdf;
+  --background-colour: rgb(11, 11, 11);
+}
+
+[data-theme="light"] {
+  --h1-colour: black;
+  --background-colour: rgb(248, 234, 214);
+}
+html {
+  background-color: var(--background-colour) !important;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -10,3 +27,43 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
+
+h1 {
+  color: var(--h1-colour);
+}
+#theme-toggle {
+  --cloud: url(../assets/cloud.svg);
+  --moon: url(../assets/moon.svg);
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  cursor: pointer;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  border: none;
+  background-size: 66%;
+  background-position: center;
+  padding: 1.2em;
+
+  border-radius: 8px;
+}
+
+.dark {
+  background-image: var(--cloud);
+  background-color: #72afc9;
+}
+.light {
+  background-image: var(--moon);
+  background-color: #9a93d5;
+}
+
+/* @media (prefers-color-scheme: light) {
+  h1 {
+    color: var(--h1-colour);
+  }
+  html {
+    background-color: var(--background-colour) !important;
+  }
+} */
