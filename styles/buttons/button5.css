@@ -3,6 +3,11 @@
   --button5-icon-invert: 1;
 }
 
+[data-theme="dark"] {
+  --button5-colour: #dfdfdf;
+  --button5-icon-invert: 1;
+}
+
 [data-theme="light"] {
   --button5-colour: #1a1a1a;
   --button5-icon-invert: 0;
