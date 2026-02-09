@@ -1,3 +1,13 @@
+:root {
+  --button5-colour: #dfdfdf;
+  --button5-icon-invert: 1;
+}
+
+[data-theme="light"] {
+  --button5-colour: #1a1a1a;
+  --button5-icon-invert: 0;
+}
+
 .button5 {
   --external-link: url(../../assets/external-link.svg);
   --border-radius: 8px;
@@ -17,7 +27,7 @@
   overflow: hidden;
 
   background-color: transparent;
-  color: #1a1a1a;
+  color: var(--button5-colour);
   text-wrap: nowrap;
 
   gap: 0.2em;
@@ -38,6 +48,8 @@
   width: 1em;
   height: 1em;
   transition: top var(--transition-duration) var(--transition-timing-function);
+
+  filter: invert(var(--button5-icon-invert));
 }
 .button5:hover span {
   left: -50%;
