@@ -17,10 +17,15 @@
   box-shadow: 0 var(--lift) 0 #000;
   transition:
     transform 0.15s ease-out,
-    box-shadow 0.15s ease-out;
+    box-shadow 0.2s ease-in-out; /* cant explain why exactly but shadow look better when it lags behind a bit */
 }
 
+[data-theme="light"] .button4:active,
 .button4:active {
   box-shadow: none;
   transform: translateY(var(--lift));
+}
+
+[data-theme="light"] .button4 {
+  box-shadow: 0 var(--lift) 0 #817f7f;
 }

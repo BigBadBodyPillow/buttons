@@ -48,8 +48,16 @@ h1 {
   padding: 1.2em;
 
   border-radius: 8px;
+
+  transition: transform 0.25s ease-in-out;
 }
 
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+#theme-toggle:active {
+  transform: scale(1);
+}
 .dark {
   background-image: var(--cloud);
   background-color: #72afc9;
