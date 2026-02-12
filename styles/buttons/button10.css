@@ -2,7 +2,12 @@
   /* width: 100px; */
   /* height: 100px; */
   color: white;
+
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inter;
   aspect-ratio: 1/1;
+  max-height: unset;
   position: relative;
   background-color: #1a1a1a;
   padding: 0;
@@ -15,7 +20,7 @@
   cursor: pointer;
   border: 1px solid transparent;
 
-  transition: font 0.15s;
+  transition: font-size 0.15s;
 
   /* background-color: transparent; */
 }
@@ -55,5 +60,7 @@
 } */
 .button10:active {
   font-size: 0.9em;
-  /* color: rgba(255, 255, 255, 0.8); */
+}
+.button10:active::before {
+  background: linear-gradient(gray, black 45%, black 55%, gray);
 }

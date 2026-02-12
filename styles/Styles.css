@@ -10,7 +10,9 @@
 html {
   background-color: var(--background-colour) !important;
 }
-
+button {
+  text-wrap: nowrap;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -26,10 +28,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  align-items: center;
 }
 
 h1 {
   color: var(--h1-colour);
+}
+button {
+  max-height: 60px;
 }
 #theme-toggle {
   --cloud: url(../assets/cloud.svg);
@@ -75,3 +81,19 @@ h1 {
     background-color: var(--background-colour) !important;
   }
 } */
+
+@media (width <= 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width <= 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width <= 370px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
