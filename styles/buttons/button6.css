@@ -1,9 +1,11 @@
 .button6 {
   --border-radius: 8px;
+  --text-colour: white;
+  --dot-size: 8px;
+  --button-background-colour: #1a1a1a;
 
-  color: white;
+  color: var(--text-colour);
   position: relative;
-  border: none;
   border-radius: var(--border-radius);
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -11,5 +13,45 @@
   font-family: inter;
   cursor: pointer;
 
-  background-color: #1a1a1a;
+  background-color: var(--button-background-colour);
+  border: 2px solid var(--button-background-colour);
+
+  overflow: hidden;
+}
+
+.button6::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--text-colour);
+  border-radius: 1000000px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+span {
+  transition: filter 0.3s;
+}
+
+.button6:hover span {
+  filter: invert(1);
+}
+
+.button6:hover::before {
+  transform: scale(40);
+}
+
+.button6:active {
+  opacity: 0.8;
+}
+/* just to maek sure it stays if you mouse mouse off while holding down */
+.button6:active span {
+  filter: invert(1);
+}
+.button6:active::before {
+  transform: scale(40);
 }
