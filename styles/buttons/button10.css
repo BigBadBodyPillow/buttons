@@ -1,66 +1,15 @@
 .button10 {
-  /* width: 100px; */
-  /* height: 100px; */
-  color: white;
+  --border-radius: 8px;
 
+  color: white;
+  position: relative;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inter;
-  aspect-ratio: 1/1;
-  max-height: unset;
-  position: relative;
-  background-color: #1a1a1a;
-  padding: 0;
-  --border-thickness: 4;
-  border-radius: calc(var(--border-thickness) * 1rem);
-  color: white;
-  z-index: 0;
-  backdrop-filter: blur(10px);
-  padding: 0;
   cursor: pointer;
-  border: 1px solid transparent;
 
-  transition: font-size 0.15s;
-
-  /* background-color: transparent; */
-}
-
-/* border */
-.button10::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: calc(var(--border-thickness) * 1px);
-  border-radius: inherit;
-  background: linear-gradient(gray, black, gray);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-
-  z-index: -2;
-}
-
-/* button background */
-.button10::after {
-  content: "";
-  position: absolute;
-  inset: calc(var(--border-thickness) * 1px);
-
-  /* innter radius | rem - px value */
-  border-radius: calc(
-    calc(var(--border-thickness) * 1rem) - calc(var(--border-thickness) * 1px)
-  );
-  background: black;
-  z-index: -1;
-  opacity: 0.3;
-}
-/* .button10:hover {
-} */
-.button10:active {
-  font-size: 0.9em;
-}
-.button10:active::before {
-  background: linear-gradient(gray, black 45%, black 55%, gray);
+  background-color: #1a1a1a;
 }

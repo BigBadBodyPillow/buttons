@@ -1,6 +1,7 @@
 .button7 {
   --border-radius: 8px;
-
+  --button-internal-height: 49px;
+  --text-start: 1.2em;
   color: white;
   position: relative;
   border: none;
@@ -11,5 +12,65 @@
   font-family: inter;
   cursor: pointer;
 
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
+
+  background:
+    radial-gradient(
+      55.41% 227.78% at 50% 277.78%,
+      #ff95ff 40%,
+      rgba(0, 227, 187, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(243, 238, 255, 0) 0%,
+      rgba(243, 238, 255, 0.04) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 227, 187, 0.01), rgba(0, 227, 187, 0.01)),
+    #000000;
+  box-shadow:
+    0px 10px 11px rgba(0, 71, 59, 0.2),
+    inset 0px 0px 0px 1px rgba(101, 42, 100, 0.8),
+    inset 0px 0px 12px rgba(255, 255, 255, 0.08),
+    inset 0px -8px 20px #953aa7;
+
+  display: flex;
+  flex-direction: row;
+}
+.button7 span {
+  margin-left: var(--text-start);
+}
+
+.button7-box {
+  content: ">";
+  position: relative;
+  overflow: hidden;
+  --inset: 4px;
+  align-content: center;
+  position: absolute;
+  inset: var(--inset) auto var(--inset) var(--inset);
+  border-radius: calc(var(--border-radius) - var(--inset));
+  width: 29.9939%;
+  height: calc(
+    100% - calc(var(--inset) * 2)
+  ); /* double the inset because of top and bottom*/
+
+  background: linear-gradient(180deg, #ff95ff 50.57%, #cd49dc 100%);
+  box-shadow:
+    0px 1px 0px 0px rgba(255, 255, 255, 0.05) inset,
+    0px -1px 0px 0px rgba(0, 0, 0, 0.2) inset;
+
+  transition: width 0.3s cubic-bezier(0.7, 0.48, 0.79, 0.81);
+}
+
+.button7-box span {
+  position: absolute;
+  left: var(--text-start);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000000;
+}
+.button7:hover .button7-box {
+  width: calc(
+    100% - calc(var(--inset) * 2)
+  ); /* double the inset because of left and right spacing*/
 }
